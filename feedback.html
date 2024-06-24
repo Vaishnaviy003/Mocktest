@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .summary, .visualizations {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        canvas {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>PLACEMENT TRAINING 2025</h1>
+    <h2>Feedback Form</h2>
+    <h3>Courses offered</h3>
+    <ol>
+        <li>HTML, CSS</li><br><br>
+        <li>Leet Code Basics</li><br><br>
+        <li>MERN and GitHub tutorial</li>
+    </ol>
+    <form id="feedbackForm">
+        Enter your email ID: <input type="text" id="email"><br>
+        Enter your Unique ID: <input type="text" id="uniqueID"><br>
+        Enter your feedback about HTML, CSS: <input type="text" id="feedbackHTML"><br>
+        Enter your feedback about Leet Code Basics: <input type="text" id="feedbackLeetCode"><br>
+        Enter your feedback about MERN and GitHub tutorial: <input type="text" id="feedbackMERN"><br>
+        <button type="button" onclick="submitFeedback()">Submit</button>
+    </form>
+
+    <div class="summary" id="summary">
+        <h2>Summary</h2>
+        <p id="summaryText"></p>
+    </div>
+
+    <script>
+        const feedbackData = [];
+
+        function submitFeedback() {
+            const email = document.getElementById('email').value;
+            const uniqueID = document.getElementById('uniqueID').value;
+            const feedbackHTML = document.getElementById('feedbackHTML').value;
+            const feedbackLeetCode = document.getElementById('feedbackLeetCode').value;
+            const feedbackMERN = document.getElementById('feedbackMERN').value;
+
+            feedbackData.push({ email, uniqueID, feedbackHTML, feedbackLeetCode, feedbackMERN });
+
+            document.getElementById('feedbackForm').reset();
+            updateSummary();
+            updateChart();
+        }
+
+        function updateSummary() {
+            const totalFeedbacks = feedbackData.length;
+            const summaryText = `Total Feedbacks: ${totalFeedbacks}`;
+            document.getElementById('summaryText').innerText = summaryText;
+        }
+
+            
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+        
+    
+    </script>
+</body>
+</html>

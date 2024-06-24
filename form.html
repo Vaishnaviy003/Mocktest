@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form </title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form">
+        <h2>LOGIN</h2>
+        <div class="form-control">
+          <label for="username">ENTER YOUR NAME</label>
+          <input type="text" id="username" placeholder="Enter name" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">ENTER YOUR EMAIL</label>
+          <input type="text" id="email" placeholder="Enter email" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            placeholder="Enter password again"
+          />
+          <small>Error message</small>
+        </div>
+        <button type="button" id="submitBtn">Submit</button>
+      </form>
+    </div>
+    <script>
+      document.getElementById('submitBtn').addEventListener('click', function() {
+        window.location.href = 'Review.html';
+      });
+    </script>
+  </body>
+</html>
